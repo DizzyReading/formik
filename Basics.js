@@ -49,7 +49,10 @@ const SignupForm = () => {
 				name="firstName"
 				type="text"
 				onChange={formik.handleChange}
-				value={formik.values.firstName}
+
+				onBlur={formik.handleBlur}
+
+
 			/>
 			{formik.errors.firstName ? <div>{formik.errors.firstName}</div> : null}
 
@@ -59,13 +62,24 @@ const SignupForm = () => {
 				name="lastName"
 				type="text"
 				onChange={formik.handleChange}
-				value={formik.values.lastName}
+
+				onBlur={formik.handleBlur}
+
 			/>
 			{formik.errors.lastName ? <div>{formik.errors.lastName}</div> : null}
 
 			<label htmlFor="email">Email Address</label>
+
+			<input
+				id="email"
+				name="email"
+				type="email"
+				onChange={formik.handleChange}
+				onBlur={formik.handleBlur}
+				value={formik.values.email}
+
 			<input id="email" name="email" type="email" onChange={formik.handleChange} value={formik.values.email} />
-			{formik.errors.email ? <div>{formik.errors.email}</div> : null}
+
 
 			<button type="submit">Submit</button>
 		</form>
